@@ -1,6 +1,7 @@
 package com.example.demo1.domain;
 
 
+import com.example.demo1.entity.Book;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

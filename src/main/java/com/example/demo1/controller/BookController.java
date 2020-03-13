@@ -1,6 +1,8 @@
 package com.example.demo1.controller;
 
-import com.example.demo1.domain.Book;
+import com.example.demo1.dao.BookRepository;
+import com.example.demo1.entity.Book;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,17 +15,22 @@ import java.util.stream.Collectors;
 public class BookController {
 
     private List<Book> books=new ArrayList<>();
+    private final BookRepository bookDao;
+
+    public BookController(BookRepository bookDao) {
+        this.bookDao = bookDao;
+    }
 
     @PostMapping("/book")
     public ResponseEntity<List<Book>> addBook(@RequestBody Book book) {
         books.add(book);
-        return ResponseEntity.ok(books);
+        bookDao.save(book);
+        return ResponseEntity.ok(bookDao.findAll());
     }
 
     @DeleteMapping("/book/{id}")
     public ResponseEntity deleteBookById(@PathVariable("id") int id) {
         books.remove(id);
-        System.out.println("ceshi");
         return ResponseEntity.ok(books);
     }
 
