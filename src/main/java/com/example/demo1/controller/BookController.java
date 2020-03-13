@@ -23,6 +23,7 @@ public class BookController {
     @DeleteMapping("/book/{id}")
     public ResponseEntity deleteBookById(@PathVariable("id") int id) {
         books.remove(id);
+        System.out.println("ceshi");
         return ResponseEntity.ok(books);
     }
 
