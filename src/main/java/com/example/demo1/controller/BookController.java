@@ -15,6 +15,7 @@ import java.util.stream.Collectors;
 public class BookController {
 
     private List<Book> books=new ArrayList<>();
+    @Autowired
     private final BookRepository bookDao;
 
     public BookController(BookRepository bookDao) {
