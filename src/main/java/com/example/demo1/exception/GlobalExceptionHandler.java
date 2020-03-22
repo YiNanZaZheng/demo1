@@ -14,7 +14,7 @@ public class GlobalExceptionHandler {
     ErrorResponse resourseNotFoundResponse = new ErrorResponse(new ResourceNotFoundException("Sorry,the resource not fount"));
 
     //拦截指定异常
-    @ExceptionHandler(value = ResourceNotFoundException.class)
+    @ExceptionHandler(value = Exception.class)
     public ResponseEntity<ErrorResponse> exceptionHandler(Exception e) {
         if (e instanceof IllegalArgumentException) {
             return ResponseEntity.status(400).body(illegalArgumentResponse);

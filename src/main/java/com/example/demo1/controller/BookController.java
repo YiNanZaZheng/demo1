@@ -30,8 +30,9 @@ public class BookController {
     }
 
     @DeleteMapping("/book/{id}")
-    public ResponseEntity deleteBookById(@PathVariable("id") int id) {
+    public ResponseEntity deleteBookById(@PathVariable("id") long id) {
         books.remove(id);
+        bookDao.deleteById(id);
         return ResponseEntity.ok(books);
     }
 
