@@ -2,19 +2,18 @@ package com.example.demo1.controller;
 
 import com.example.demo1.dao.BookRepository;
 import com.example.demo1.entity.Book;
+import org.hibernate.tool.schema.internal.exec.ScriptTargetOutputToFile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api")
 public class BookController {
 
-    private List<Book> books=new ArrayList<>();
     @Autowired
     private final BookRepository bookDao;
 
@@ -23,22 +22,42 @@ public class BookController {
     }
 
     @PostMapping("/book")
-    public ResponseEntity<List<Book>> addBook(@RequestBody Book book) {
-        books.add(book);
+    public ResponseEntity addBook(@RequestBody Book book) {
         bookDao.save(book);
-        return ResponseEntity.ok(bookDao.findAll());
+        return ResponseEntity.ok(book);
     }
 
     @DeleteMapping("/book/{id}")
     public ResponseEntity deleteBookById(@PathVariable("id") long id) {
-        books.remove(id);
         bookDao.deleteById(id);
-        return ResponseEntity.ok(books);
+        return ResponseEntity.ok(bookDao.findAll());
     }
 
     @GetMapping("/book")
     public ResponseEntity getBookByBaName(@RequestParam("name") String name) {
-        List<Book> results = books.stream().filter(book -> book.getName().equals(name)).collect(Collectors.toList());
+        List<Book> results = bookDao.findAll().stream().filter(book -> book.getName().equals(name)).collect(Collectors.toList());
         return ResponseEntity.ok(results);
+    }
+
+    @PostMapping("/book/update")
+    public ResponseEntity postUpdateBook(@RequestBody Book book) {
+        Book oldbook = bookDao.findOnlyBookById(book.getId());
+        oldbook.setName(book.getName());
+        oldbook.setDescription(book.getDescription());
+        return ResponseEntity.ok(book);
+    }
+
+    @GetMapping("/bookbydesc")
+    public ResponseEntity getBookLikeBydesc(@RequestParam("description") String description) {
+        System.out.println(description);
+        List<Book> books = bookDao.findByDescriptionCustome(description);
+
+        return ResponseEntity.ok(books);
+
+    }
+    @GetMapping("/test")
+    public ResponseEntity arryTest(){
+
+        return ResponseEntity.ok("");
     }
 }
