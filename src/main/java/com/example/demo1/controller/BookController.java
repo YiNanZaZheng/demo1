@@ -51,7 +51,6 @@ public class BookController {
     public ResponseEntity getBookLikeBydesc(@RequestParam("description") String description) {
         System.out.println(description);
         List<Book> books = bookDao.findByDescriptionCustome(description);
-
         return ResponseEntity.ok(books);
 
     }
