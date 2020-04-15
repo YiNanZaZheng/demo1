@@ -2,6 +2,8 @@ package com.example.simplespring.ioc.xml;
 
 import com.example.simplespring.ioc.BeanDefinitionReader;
 import com.example.simplespring.ioc.entity.BeanDefinition;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -45,5 +47,8 @@ public class XmlBeanDefinitionReader implements BeanDefinitionReader {
 
     }
 
+    public static void main(String[] args) {
+        new ClassPathXmlApplicationContext();
+    }
 
 }

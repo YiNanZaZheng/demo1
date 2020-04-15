@@ -24,6 +24,7 @@ public class BookController {
     @PostMapping("/book")
     public ResponseEntity addBook(@RequestBody Book book) {
         bookDao.save(book);
+        System.out.println(book);
         return ResponseEntity.ok(book);
     }
 
