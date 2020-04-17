@@ -2,17 +2,19 @@ package com.example.demo1.dao;
 
 import com.example.demo1.entity.User;
 import org.apache.ibatis.annotations.*;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Mapper
 @Repository
+@Qualifier("db2SqlSessionTemplate")
 public interface UserDao {
     /*
      *  通过名字查询用户信息
      */
-    @Select("select * from user where name={#name}")
+    @Select("select * from user where name=#{name}")
     User findUserByName(@Param("name") String name);
 
     @Select("select * from user")

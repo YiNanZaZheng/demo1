@@ -1,9 +1,11 @@
 package com.example.demo1.dao;
 
 import com.example.demo1.entity.Person;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
+@Mapper
 @Repository
-public interface PersonRepository extends JpaRepository<Person,Long> {
+public interface PersonRepository {
+
 }

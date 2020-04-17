@@ -2,7 +2,6 @@ package com.example.demo1.controller;
 
 import com.example.demo1.dao.BookRepository;
 import com.example.demo1.entity.Book;
-import org.hibernate.tool.schema.internal.exec.ScriptTargetOutputToFile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +14,7 @@ import java.util.stream.Collectors;
 public class BookController {
 
     @Autowired
-    private final BookRepository bookDao;
+    BookRepository bookDao;
 
     public BookController(BookRepository bookDao) {
         this.bookDao = bookDao;
@@ -23,7 +22,7 @@ public class BookController {
 
     @PostMapping("/book")
     public ResponseEntity addBook(@RequestBody Book book) {
-        bookDao.save(book);
+        bookDao.save(book.getName(),book.getDescription());
         System.out.println(book);
         return ResponseEntity.ok(book);
     }
