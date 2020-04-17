@@ -15,7 +15,7 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan(basePackages = "com.example.demo1.dao",sqlSessionTemplateRef = "db2SqlSessionTemplate")
+@MapperScan(basePackages = "com.example.demo1.dao1",sqlSessionTemplateRef = "db2SqlSessionTemplate")
 public class DataSoure2config {
     /**
      * 生成数据源

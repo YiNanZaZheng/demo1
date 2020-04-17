@@ -1,4 +1,4 @@
-package com.example.demo1.dao;
+package com.example.demo1.dao1;
 
 import com.example.demo1.entity.User;
 import org.apache.ibatis.annotations.*;
