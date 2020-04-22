@@ -1,20 +1,18 @@
-package com.example.demo1.exception;
+package com.example.demo1.sys.exception;
 
 import com.example.demo1.controller.BookController;
 import com.example.demo1.controller.ExceptionController;
 import com.example.demo1.domain.ErrorResponse;
-import com.sun.org.apache.bcel.internal.generic.NEW;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.validation.ConstraintViolationException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @ControllerAdvice(assignableTypes = {ExceptionController.class, BookController.class})
@@ -52,5 +50,10 @@ public class GlobalExceptionHandler {
             errors.put(fieldName,errorMessage);
         }));
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors);
+    }
+
+    @ExceptionHandler(ConstraintViolationException.class)
+    ResponseEntity<String> handleConstraintViolationException(ConstraintViolationException e) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
     }
 }

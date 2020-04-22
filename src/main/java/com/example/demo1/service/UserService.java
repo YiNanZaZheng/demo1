@@ -2,7 +2,7 @@ package com.example.demo1.service;
 
 import com.example.demo1.dao1.UserDao;
 import com.example.demo1.entity.User;
-import com.example.demo1.exception.CmError;
+import com.example.demo1.sys.exception.CmError;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,7 +31,7 @@ public class UserService {
     public List<User> selectAllUser() {
         List<User> allUser = userDao.findAllUser();
         if (true) {
-            throw CmError.ErrorTest.E0002("奇奇怪怪的报错","优秀啊");
+            throw CmError.ErrorTest.E0001("优秀啊");
         }
         return userDao.findAllUser();
     }

@@ -1,4 +1,4 @@
-package com.example.demo1.exception.core;
+package com.example.demo1.sys.exception.core;
 
 public class BussinessException extends CoreException {
 

@@ -1,7 +1,7 @@
 package com.example.demo1.config;
 
-import com.example.demo1.interceptor.LogInterceptor;
-import com.example.demo1.interceptor.OldBookLinkInterceptor;
+import com.example.demo1.sys.interceptor.LogInterceptor;
+import com.example.demo1.sys.interceptor.OldBookLinkInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;

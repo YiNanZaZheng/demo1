@@ -1,6 +1,6 @@
 package com.example.demo1.config;
 
-import com.example.demo1.filter.MyFilter;
+import com.example.demo1.sys.filter.MyFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

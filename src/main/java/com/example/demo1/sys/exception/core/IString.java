@@ -1,6 +1,5 @@
-package com.example.demo1.exception.core;
+package com.example.demo1.sys.exception.core;
 
-import java.util.HashMap;
 import java.util.Set;
 
 public class IString {

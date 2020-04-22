@@ -1,8 +1,6 @@
 package com.example.demo1.controller;
 
-import com.example.demo1.domain.ErrorResponse;
-import com.example.demo1.exception.ResourceNotFoundException;
-import jdk.nashorn.internal.objects.annotations.Getter;
+import com.example.demo1.sys.exception.ResourceNotFoundException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

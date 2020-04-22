@@ -1,8 +1,8 @@
-package com.example.demo1.exception;
+package com.example.demo1.sys.exception;
 
-import com.example.demo1.exception.core.BussinessException;
-import com.example.demo1.exception.core.IString;
-import com.example.demo1.exception.core.Params;
+import com.example.demo1.sys.exception.core.BussinessException;
+import com.example.demo1.sys.exception.core.IString;
+import com.example.demo1.sys.exception.core.Params;
 
 public class CmError {
     public static class ErrorTest{
@@ -67,6 +67,8 @@ public class CmError {
             Params context = new Params().add("desc1", desc1).add("desc2",desc2);
             throw new BussinessException(E0002, new IString(I_E0002, context), t);
         }
+
+
 
     }
 }
