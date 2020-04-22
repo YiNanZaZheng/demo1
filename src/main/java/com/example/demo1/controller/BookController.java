@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -21,7 +22,7 @@ public class BookController {
     }
 
     @PostMapping("/book")
-    public ResponseEntity addBook(@RequestBody Book book) {
+    public ResponseEntity addBook(@RequestBody @Valid Book book) {
         bookDao.save(book.getName(),book.getDescription());
         System.out.println(book);
         return ResponseEntity.ok(book);
