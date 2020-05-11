@@ -1,4 +1,4 @@
-package com.example.demo1.domain;
+package com.example.demo1.sys.domain;
 
 import lombok.Getter;
 import lombok.Setter;

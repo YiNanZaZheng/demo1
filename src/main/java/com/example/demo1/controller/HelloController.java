@@ -1,7 +1,7 @@
 package com.example.demo1.controller;
 
-import com.example.demo1.domain.LibraryProperties;
-import com.example.demo1.domain.ProfileProperties;
+import com.example.demo1.sys.domain.LibraryProperties;
+import com.example.demo1.sys.domain.ProfileProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

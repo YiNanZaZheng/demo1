@@ -2,7 +2,7 @@ package com.example.demo1.sys.exception;
 
 import com.example.demo1.controller.BookController;
 import com.example.demo1.controller.ExceptionController;
-import com.example.demo1.domain.ErrorResponse;
+import com.example.demo1.sys.domain.ErrorResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;

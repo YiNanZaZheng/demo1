@@ -6,10 +6,13 @@ import com.example.demo1.sys.exception.CmError;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.validation.annotation.Validated;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Service
+@Validated
 public class UserService {
 
     @Autowired
@@ -40,7 +43,7 @@ public class UserService {
      *
      * @param user
      */
-    public void insertUser(User user) {
+    public void insertUser(@Valid User user) {
         userDao.insertUser(user.getName(),user.getAge(),user.getMoney());
     }
 
