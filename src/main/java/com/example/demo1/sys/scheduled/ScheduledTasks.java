@@ -12,13 +12,14 @@ import java.util.Date;
 
 
 @EnableAsync
+@Component
 public class ScheduledTasks {
     private static final Logger log = LoggerFactory.getLogger(ScheduledTasks.class);
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
     /**
      * cron：使用Cron表达式。　每分钟的1，2秒运行
      */
-    @Scheduled(cron = "1-2 * * * * ? ")
+    @Scheduled(cron = "! * * * * ? ")
     public void reportCurrentTimeWithCronExpression() {
         log.info("Cron Expression: The time is now {}", dateFormat.format(new Date()));
     }

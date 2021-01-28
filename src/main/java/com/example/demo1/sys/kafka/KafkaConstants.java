@@ -2,8 +2,6 @@ package com.example.demo1.sys.kafka;
 
 
 import org.springframework.beans.factory.annotation.Value;
-import java.util.Timer.*;
-import com.mysql.jdbc.*;
 public class KafkaConstants {
 
     @Value("${kafka.broker_urllist}")

@@ -12,7 +12,7 @@ import org.springframework.scheduling.config.ScheduledTaskRegistrar;
 @EnableConfigurationProperties(ProfileProperties.class)
 public class SchedulerConfig implements SchedulingConfigurer {
 
-    @Value("$scheduled-pool-size}")
+    @Value("${scheduled-pool-size}")
     private int POOL_SIZE;
 
     @Override

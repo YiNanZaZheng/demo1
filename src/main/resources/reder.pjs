@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- dbReader -->
+<pjs className="com.aaa.bbb.ccc" chunkSize="-11">
+	<dbReader sqlId="com.sql.s" pageSize="100" paramFun="funcation">
+		<paramValues>
+			<param key="1" value="a"/>
+			<param key="2" value="b"/>
+			<param key="3" value="c"/>
+		</paramValues>
+		<paramMappings>
+			<param key="4" value="d"/>
+			<param key="5" value="e"/>
+			<param key="6" value="f"/>
+		</paramMappings>
+	</dbReader>
+
+	<delimitedFileReader delimiter="delimiter">
+		<names>q</names>
+		<fileSystem>qq</fileSystem>
+		<afterDownload>qqq</afterDownload>
+		<encoding>qqqq</encoding>
+		<comments>qqqqq</comments>
+		<linesToSkip>qqqqq</linesToSkip>
+		<skippedLinesCallback>qqqqqqq</skippedLinesCallback>
+	</delimitedFileReader>
+
+	<fixedLengthFileReader columns="">
+		<names></names>
+		<fileSystem></fileSystem>
+		<afterDownload></afterDownload>
+		<encoding></encoding>
+		<comments></comments>
+		<linesToSkip></linesToSkip>
+		<skippedLinesCallback></skippedLinesCallback>
+	</fixedLengthFileReader>
+
+	<xmlFileReader delimiter="" endSymbol="">
+		<names></names>
+		<fileSystem></fileSystem>
+		<afterDownload></afterDownload>
+		<encoding></encoding>
+		<comments></comments>
+		<linesToSkip></linesToSkip>
+		<skippedLinesCallback></skippedLinesCallback>
+	</xmlFileReader>
+
+	<customReader custClassName=""/>
+</pjs>

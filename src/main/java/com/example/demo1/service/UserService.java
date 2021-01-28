@@ -3,12 +3,17 @@ package com.example.demo1.service;
 import com.example.demo1.dao1.UserDao;
 import com.example.demo1.entity.User;
 import com.example.demo1.sys.exception.CmError;
+import javafx.scene.input.DataFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
+import sun.text.resources.cldr.ar.FormatData_ar_MA;
 
 import javax.validation.Valid;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -63,6 +68,13 @@ public class UserService {
         userDao.updateUser("张三", 13, 12200.00, 1);
         int tmp=1/0;
         userDao.updateUser("李四", 13, 11080.00, 2);
+    }
+
+    public static void main(String[] args) {
+        Date date = new Date();
+        DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+        String format = dateFormat.format(date);
+        System.out.println(format);
     }
 
 }

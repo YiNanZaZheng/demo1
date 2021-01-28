@@ -27,4 +27,8 @@ public class Book {
     @NotNull(message = "email 不能为空")
     private String email;
 
+    public Boolean ceshi(int num) {
+        return false;
+    }
+
 }
